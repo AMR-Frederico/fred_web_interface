@@ -20,6 +20,7 @@ $(document).ready(function(){
 
   initializeTopics();
   display_ticks();
+  display_distance();
 
 });
 
@@ -86,18 +87,18 @@ function initializeTopics() {
   });
  distance_back = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/back",
+    messageType: 'sensor_msgs/Range'
   });
  distance_left = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/left",
+    messageType: 'sensor_msgs/Range'
   });
  distance_right = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/right",
+    messageType: 'sensor_msgs/Range'
   });
 
 

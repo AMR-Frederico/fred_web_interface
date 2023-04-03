@@ -21,5 +21,20 @@ function display_imu(){
     $("#imu").text( message.data);
     // console.log(message.data);  
   });
+}
+function display_distance(){
+  distance_back.subscribe(function(message) {
+    $("#distance_back").text( message.range);
+    // console.log(message.range);  
+  });
 
+   distance_right.subscribe(function(message) {
+    $("#distance_right").text( message.range);
+    // console.log(message.range);  
+  });
+
+  distance_left.subscribe(function(message) {
+    $("#distance_left").text( message.range);
+    // console.log(message.range);  
+  });
 }
