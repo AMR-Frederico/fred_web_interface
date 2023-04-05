@@ -1,62 +1,111 @@
 body {
   background-color: black;
+  font-family: 'Squada One', cursive;
+  overflow: hidden;
 }
 
 
 
 .container_bg {
-  margin: 1rem;
+  margin: 3rem;
   background-color: whitesmoke;
   height: 55rem;
   width: 98%;
   display: flex;
   flex-direction: column;
+  background-image:url("midia/Fundo_Controle_Missao_Fred.png") ;
 }
 
 .container_area{
   margin: 0.3rem;
-  background-color: gray;
-  height: 20rem;
-  width: auto;
+  border-style: solid;
+  border-color: white;  
+  border-width: 5px;
+  height: 15rem;
+  width: 90%;
   display: flex;
   flex-direction: column;
+  background-color: rgb(25, 25, 25);;
+  justify-content: space-between;
+  
+
 }
 .container_sensor{
   margin: 1rem;
-  background-color: darkgray;
-  width: 40rem;
+
   display: flex;
   flex-direction: column;
+    border-style: solid;
+  border-color: white;
+  border-width:4px;
+  flex-grow: 1;
   
 }
 .title_values{
-  margin: 1rem;
-  width: 40rem;
+  margin: 0.1rem;
   display: flex;
+  margin-left: 3rem;  
+
   
 }
 
 .values{
   display: flex;
   
+
 }
 .container_value{
   margin: 1rem;
-  background-color: white;
-  width: 12rem;
+  /* background-color: white; */
+ 
   display: flex;
   flex-direction: column;
+    border-style: solid;
+  border-color:white;
+  border-width: 4px;
+   flex-grow: 1;  
 
 }
 .title{
   width: 100%;
-  background-color: lightgray;
-  margin: 0%;
-}
-
-h1, h2{
+  /* background-color: lightgray; */
   margin: 0%;
   justify-content: center;
+ 
+  
+}
+
+
+.container_sensor > .title {
+     border-style: solid;
+  border-color: white;
+  border-width: 2px;
+   margin-left: 0;
+  justify-content: center;
+}
+
+.container_value >.title{
+  display: flex;  
+}
+
+.rading_values{
+  width: 100%;
+  /* background-color: lightgray; */
+  margin: 0%;
+  justify-content: center;
+  display: flex;
+}
+h2 {
+     color: rgb(166,166,166);
+     margin: 0%;
+  /* justify-content: center; */
+  
+}
+
+h1{
+  margin: 0%;
+  justify-content: center;
+  color: white;
   
 
 }

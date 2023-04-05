@@ -10,6 +10,9 @@
 
     <!-- Our CSS -->
     <link href="index.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+    </style>
   </head>
   <body>
 
@@ -19,8 +22,8 @@
     </nav>
 
     <div class="container_bg">
-      <div class = "container_area">
-          <h1>Fred Mission Control</h1>
+      <div  style="visibility: hidden;" class = "container_area">
+        
       </div>
        <div class = "container_area">
         <div class="title">
@@ -31,7 +34,7 @@
         
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>State Machine</h1>
             </div>
 
@@ -39,9 +42,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Goal mode</h2>
+                      <h2>—— Goal mode ——</h2>
                   </div>
-                <h1> Idle</h1>
+                 <div  class="rading_values">
+                    <h1> Idle</h1>
+                 </div>
               </div>
               
 
@@ -52,7 +57,7 @@
           <!-- ------------------- INIT Odom --------------------------------- -->
         <div class="container_sensor">
 
-            <div class="title">
+             <div  class="rading_values">
                 <h1>Mode</h1>
             </div>
 
@@ -60,9 +65,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>current</h2>
+                      <h2>—— current ——</h2>
                   </div>
-                <h1> Manual</h1>
+                   <div  class="rading_values">
+                      <h1> Manual</h1>
+                  </div>
               </div>
               
               
@@ -74,7 +81,7 @@
           <!-- ------------------------ init cmd_vel ------------------- -->
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>Objective</h1>
             </div>
 
@@ -82,15 +89,19 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Current </h2>
+                      <h2>—— Current —— </h2>
                   </div>
+               <div  class="rading_values">
                 <h1 id = "current_objective"> 12.5 , 0</h1>
+              </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Next</h2>
+                      <h2>—— Next ——</h2>
                   </div>
-                <h1> 4 , 6</h1>
+                  <div  class="rading_values">
+                      <h1> 4 , 6</h1>
+                  </div>
               </div>
               
 
@@ -112,28 +123,37 @@
           <div class="container_sensor">
 
             <div class="title">
-                <h1>Pose</h1>
+                <div class="rading_values">
+                  <h1> Pose</h1>
+
+                </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>X</h2>
+                      <h2>—— X ——</h2>
                   </div>
-                <h1> 000</h1>
+                <div class="rading_values">
+                  <h1> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Y</h2>
+                      <h2>—— Y ——</h2>
                   </div>
-                <h1> 000</h1>
+                <div class="rading_values">
+                      <h1> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Theta</h2>
+                      <h2>—— Theta ——</h2>
                   </div>
-                <h1> 000</h1>
+                  <div class="rading_values">
+                       <h1> 000</h1>
+                  </div>
               </div>
 
             </div>
@@ -144,22 +164,31 @@
         <div class="container_sensor">
 
             <div class="title">
-                <h1>Speed Feedback</h1>
+                <div class="rading_values">
+                  <h1>Speed Feedback</h1>
+                </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Angular</h2>
+                      <div class="rading_values">
+                            <h2>—— Angular ——</h2>
+                      </div>
                   </div>
+                      <div class="rading_values">
                 <h1> 000</h1>
+                      </div>
               </div>
               <div class="container_value">
                   <div class="title">
-                      <h2>Linear</h2>
+                  
+                      <h2>—— Linear ——</h2>
                   </div>
-                <h1> 000</h1>
+                    <div class="rading_values">
+                       <h1> 000</h1>
+                   </div>
               </div>
               
 
@@ -171,22 +200,28 @@
           <div class="container_sensor">
 
             <div class="title">
-                <h1>CMD_VEL</h1>
+                  <div class="rading_values">
+                     <h1>CMD_VEL</h1>
+                  </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Linear X</h2>
+                      <h2>—— Linear X ——</h2>
                   </div>
-                <h1> 000</h1>
+                    <div class="rading_values">
+                      <h1> 000</h1>
+                    </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Angular Z</h2>
+                      <h2>—— Angular Z ——</h2>
                   </div>
-                <h1> 000</h1>
+                   <div class="rading_values">
+                       <h1> 000</h1>
+                   </div>
               </div>
               
 
@@ -210,7 +245,7 @@
         
           <div class="container_sensor">
 
-            <div class="title">
+           <div  class="rading_values">
                 <h1>Distance</h1>
             </div>
 
@@ -218,21 +253,27 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Left</h2>
+                      <h2>—— Left ——</h2>
+                  </div>  
+                  <div  class="rading_values">
+                     <h1> 000</h1>
                   </div>
-                <h1> 000</h1>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Right</h2>
+                      <h2>—— Right ——</h2>
                   </div>
-                <h1> 000</h1>
+                 <div  class="rading_values">
+                  <h1> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Back</h2>
+                      <h2>—— Back ——</h2>
                   </div>
-                <h1> 000</h1>
+                 <div  class="rading_values">
+                  <h1> 000</h1>
+                 </div>
               </div>
 
             </div>
@@ -242,7 +283,7 @@
           <!-- ------------------- INIT IMU --------------------------------- -->
         <div class="container_sensor">
 
-            <div class="title">
+             <div  class="rading_values">
                 <h1>IMU</h1>
             </div>
 
@@ -250,9 +291,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>YAW</h2>
+                      <h2>—— YAW ——</h2>
                   </div>
-                <h1 id = "imu"> 000</h1>
+                  <div  class="rading_values">
+                      <h1 id = "imu"> 000</h1>
+                  </div>
               </div>
               
 
@@ -263,7 +306,7 @@
           <!-- ------------------------ init encoder ------------------- -->
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>Encoder</h1>
             </div>
 
@@ -271,15 +314,19 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2 >Left Ticks</h2>
+                      <h2 >—— Left Ticks ——</h2>
                   </div>
-                <h1 id="left_ticks" > 000</h1>
+                   <div  class="rading_values">
+                      <h1 id="left_ticks" > 000</h1>
+                   </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Right  Ticks</h2>
+                      <h2>—— Right Ticks ——</h2>
                   </div>
-                <h1 id="right_ticks"> 000</h1>
+                   <div  class="rading_values">
+                      <h1 id="right_ticks"> 000</h1>
+                  </div>
               </div>
               
 
