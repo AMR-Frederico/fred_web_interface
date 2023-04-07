@@ -7,7 +7,7 @@ $(document).ready(function(){
   });
   
   ros.on('connection', function() {
-    console.log('Connected to ROS Bridge server!');
+    console.log('Connected to ROS Bridge server!!');
   });
   
   ros.on('error', function(error) {
@@ -20,7 +20,8 @@ $(document).ready(function(){
 
   initializeTopics();
   display_ticks();
-
+  display_distance();
+  display_imu();
 });
 
 // Variáveis globais
@@ -75,29 +76,26 @@ function initializeTopics() {
 
   sensor_imu = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/orientation/imu",
+    messageType: 'sensor_msgs/Imu'
   });
+  
 
+ 
  distance_back = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
-  });
- distance_back = new ROSLIB.Topic({
-    ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/back",
+    messageType: 'sensor_msgs/Range'
   });
  distance_left = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/left",
+    messageType: 'sensor_msgs/Range'
   });
  distance_right = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/right",
+    messageType: 'sensor_msgs/Range'
   });
 
 
