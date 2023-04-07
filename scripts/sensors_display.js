@@ -18,9 +18,9 @@ function display_ticks() {
 
 function display_imu(){
   sensor_imu.subscribe(function(message) {
-    $("#imu").text( message.quaternion.z);
-    console.log(message); 
-    console.log(message.quaternion);
+    var quat =  message.orientation.x + "| " + message.orientation.y + "| " + message.orientation.z + "| " + message.orientation.w ;
+    $("#imu").text(quat);
+    
   });
 }
 function display_distance(){
