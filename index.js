@@ -138,8 +138,8 @@ cmd_vel =  new ROSLIB.Topic({
   });
 
   controler_battery = new ROSLIB.Topic({
-    ros:ros, 
-    namr:"/joy/controler/ps4/battery",
+    ros: ros, 
+    name: "/joy/controler/ps4/battery",
     messageType:"std_msgs/Int16"
   });
 }

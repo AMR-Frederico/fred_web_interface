@@ -9,7 +9,7 @@ function display_curent_objective(){
 function display_mode(){
 
     current_mode.subscribe(function(message) {
-    console.log(message.data);
+    // console.log(message.data);
     if(message.data){
        $("#mode").text( "Manual");
     }else{
@@ -40,6 +40,7 @@ function display_state(){
 
 function display_controler_bat(){
   controler_battery.subscribe(function(message) {
+    console.log(message.data);    
     $("#controler_bat").text( (message.data)*10 + "%");
       
   });

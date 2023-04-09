@@ -7,9 +7,9 @@ function display_odom(){
     var y = message.pose.pose.orientation.y;
     var z = message.pose.pose.orientation.z;
     var w =  message.pose.pose.orientation.w;
-    console.log(x + ":" + y + ":"+z+":"+w);
+    // console.log(x + ":" + y + ":"+z+":"+w);
     var theta =  quaternionToEuler(x, y, z, w).yaw;
-    console.log(theta);
+    // console.log(theta);
     $("#odom_theta").text(theta.toFixed(precision) );
 
     $("#odom_speed_linear").text(message.twist.twist.linear.x.toFixed(precision));
