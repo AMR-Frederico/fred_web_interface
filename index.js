@@ -8,14 +8,17 @@ $(document).ready(function(){
   
   ros.on('connection', function() {
     console.log('Connected to ROS Bridge server!!');
+    connected_to_ros = true;
   });
   
   ros.on('error', function(error) {
     console.log('Error connecting to ROS Bridge server:', error);
+    connected_to_ros = false; 
   });
   
   ros.on('close', function() {
     console.log('Disconnected from ROS Bridge server.');
+    connected_to_ros = false; 
   });
 
   initializeTopics();
@@ -32,11 +35,15 @@ $(document).ready(function(){
   display_curent_objective();
   display_controler_bat();
 
+  ros_connected();
+  controler_connected();
+
+
 });
 
 // Variáveis globais
 var ros;
-
+var connected_to_ros = false;
 // Sensors 
 var sensor_ticks_left;
 var sensor_ticks_right;
@@ -61,8 +68,7 @@ var curent_objective;
 var next_objective; 
 
 var controler_battery ; 
-
-
+var controler_conected; 
 
 
 
@@ -141,5 +147,11 @@ cmd_vel =  new ROSLIB.Topic({
     ros: ros, 
     name: "/joy/controler/ps4/battery",
     messageType:"std_msgs/Int16"
+  });
+
+  controler_conected = new ROSLIB.Topic({
+    ros: ros, 
+    name: "/joy/controler/ps4/battery",
+    messageType:"std_msgs/Bool"
   });
 }
