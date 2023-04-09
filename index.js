@@ -19,9 +19,19 @@ $(document).ready(function(){
   });
 
   initializeTopics();
+
   display_ticks();
   display_distance();
   display_imu();
+
+  display_odom();
+  display_cmd_vel();
+
+  display_mode();
+  display_state();
+  display_curent_objective();
+  display_controler_bat();
+
 });
 
 // Variáveis globais
@@ -38,23 +48,19 @@ var distance_right;
 var distance_back;
 
 //Status 
-var pose_x;
-var pose_y;
-var theta;
+var pose_odom;
 
-var feedback_linear
-var feedback_angular 
+var cmd_vel;
 
-var cmd_vel_linear
-var cmd_vel_angular 
 
 //Fred
 
-var goal_mode;
+var state_mode;
 var current_mode;
 var curent_objective;
-var next_objective 
+var next_objective; 
 
+var controler_battery ; 
 
 
 
@@ -101,4 +107,39 @@ function initializeTopics() {
 
 
 
+curent_objective =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/goal_manager/goal/current",
+    messageType: 'geometry_msgs/PoseStamped'
+  });
+
+state_mode = new ROSLIB.Topic({
+    ros: ros,
+    name: "/cmd/led_strip/color",
+    messageType: 'std_msgs/Float32'
+  });
+
+current_mode =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/machine_state/control_mode/manual",
+    messageType: 'std_msgs/Bool'
+  });
+
+pose_odom =   new ROSLIB.Topic({
+    ros: ros,
+    name: "/odom",
+    messageType: 'nav_msgs/Odometry'
+  });
+
+cmd_vel =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/cmd_vel",
+    messageType: 'geometry_msgs/Twist'
+  });
+
+  controler_battery = new ROSLIB.Topic({
+    ros:ros, 
+    namr:"/joy/controler/ps4/battery",
+    messageType:"std_msgs/Int16"
+  });
 }

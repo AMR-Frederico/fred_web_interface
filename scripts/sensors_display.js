@@ -16,13 +16,14 @@ function display_ticks() {
 
 }
 
-function display_imu(){
+function display_imu() {
+  var precision = 2 ; 
   sensor_imu.subscribe(function(message) {
-    var quat =  message.orientation.x + "| " + message.orientation.y + "| " + message.orientation.z + "| " + message.orientation.w ;
+    var quat = message.orientation.x.toFixed(precision) + " | " + message.orientation.y.toFixed(precision) + " | " + message.orientation.z.toFixed(precision) + " | " + message.orientation.w.toFixed(precision);
     $("#imu").text(quat);
-    
   });
 }
+
 function display_distance(){
   distance_back.subscribe(function(message) {
     $("#distance_back").text( message.range);
@@ -36,6 +37,6 @@ function display_distance(){
 
   distance_left.subscribe(function(message) {
     $("#distance_left").text( message.range);
-    console.log(message.range);  
+    // console.log(message.range);  
   });
 }

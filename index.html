@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ROS - Live Server</title>
+    <title>Fred MC</title>
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
@@ -42,7 +42,7 @@
                       <h2>—— Goal mode ——</h2>
                   </div>
                  <div  class="rading_values">
-                    <h1> Idle</h1>
+                    <h1 id="state"> Idle</h1>
                  </div>
               </div>
               
@@ -65,7 +65,7 @@
                       <h2>—— current ——</h2>
                   </div>
                    <div  class="rading_values">
-                      <h1> Manual</h1>
+                      <h1 id ="mode"> Manual</h1>
                   </div>
               </div>
               
@@ -89,7 +89,7 @@
                       <h2>—— Current —— </h2>
                   </div>
                <div  class="rading_values">
-                <h1 id = "current_objective"> 12.5 , 0</h1>
+                <h1 id = "current_objective"> 0 , 0</h1>
               </div>
               </div>
                <div class="container_value">
@@ -97,7 +97,7 @@
                       <h2>—— Next ——</h2>
                   </div>
                   <div  class="rading_values">
-                      <h1> 4 , 6</h1>
+                      <h1> 0 , 0</h1>
                   </div>
               </div>
               
@@ -105,24 +105,31 @@
             </div>
 
           </div>
-
            <div class="container_sensor">
 
             <div  class="rading_values">
-                <h1>Objective</h1>
+                <h1>Charge</h1>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
-                 <div class="logo_console"></div>
+                  <div class="title">
+                      <h2>—— Controler ——</h2>
+                  </div>
+                 <div  class="rading_values">
+                    <h1 id = "controler_bat" > 0%</h1>
+                 </div>
               </div>
-               
               
 
             </div>
 
           </div>
+          
+           
+
+        
           <!-- ---------------------- finished encoder ----------------------  -->
         </div>
           <!-- ----------------------------- finished sensor-----------------------  -->
@@ -151,7 +158,7 @@
                       <h2>—— X ——</h2>
                   </div>
                 <div class="rading_values">
-                  <h1> 000</h1>
+                  <h1 id="odom_x"> 000</h1>
                 </div>
               </div>
               <div class="container_value">
@@ -159,7 +166,7 @@
                       <h2>—— Y ——</h2>
                   </div>
                 <div class="rading_values">
-                      <h1> 000</h1>
+                      <h1 id="odom_y"> 000</h1>
                 </div>
               </div>
               <div class="container_value">
@@ -167,7 +174,7 @@
                       <h2>—— Theta ——</h2>
                   </div>
                   <div class="rading_values">
-                       <h1> 000</h1>
+                       <h1 id="odom_theta"> 000</h1>
                   </div>
               </div>
 
@@ -193,7 +200,7 @@
                       </div>
                   </div>
                       <div class="rading_values">
-                <h1> 000</h1>
+                <h1 id="odom_speed_angular"> 000</h1>
                       </div>
               </div>
               <div class="container_value">
@@ -202,7 +209,7 @@
                       <h2>—— Linear ——</h2>
                   </div>
                     <div class="rading_values">
-                       <h1> 000</h1>
+                       <h1 id="odom_speed_linear"> 000</h1>
                    </div>
               </div>
               
@@ -227,7 +234,7 @@
                       <h2>—— Linear X ——</h2>
                   </div>
                     <div class="rading_values">
-                      <h1> 000</h1>
+                      <h1 id="cmd_linear"> 000</h1>
                     </div>
               </div>
                <div class="container_value">
@@ -235,7 +242,7 @@
                       <h2>—— Angular Z ——</h2>
                   </div>
                    <div class="rading_values">
-                       <h1> 000</h1>
+                       <h1 id="cmd_angular"> 000</h1>
                    </div>
               </div>
               
@@ -271,7 +278,7 @@
                       <h2>—— Left ——</h2>
                   </div>  
                   <div  class="rading_values">
-                     <h1> 000</h1>
+                      <h1 id = "distance_left"> 000</h1>
                   </div>
               </div>
               <div class="container_value">
@@ -279,7 +286,7 @@
                       <h2>—— Right ——</h2>
                   </div>
                  <div  class="rading_values">
-                  <h1> 000</h1>
+                  <h1 id = "distance_right"> 000</h1>
                 </div>
               </div>
               <div class="container_value">
@@ -287,7 +294,7 @@
                       <h2>—— Back ——</h2>
                   </div>
                  <div  class="rading_values">
-                  <h1> 000</h1>
+                  <h1 id = "distance_back"> 000</h1>
                  </div>
               </div>
 
@@ -368,5 +375,8 @@
     <script src="index.js" crossorigin="anonymous"></script>
     <script src="./scripts/point_cloud_controller.js" crossorigin="anonymous"></script>
     <script src="./scripts/sensors_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/status_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/fred_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/tools.js" crossorigin="anonymous"></script>
   </body>
 </html>
