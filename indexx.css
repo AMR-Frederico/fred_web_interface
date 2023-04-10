@@ -19,7 +19,7 @@ border-color: white;
   width: 98%;
   display: flex;
   flex-direction: column;
-  background-image:url("midia/Fundo_Controle_Missao_Fred.png") ;
+  background-image:url("midia/Apenas_Fundo.png") ;
 }
 
 .container_area{
@@ -45,8 +45,13 @@ border-color: white;
   border-color: white;
   border-width:4px;
   flex-grow: 1;
+}
+.container_sensor_mission_control{
+  height: 60px;
+  
   
 }
+
 .title_values{
   margin: 0.1rem;
   display: flex;
@@ -113,5 +118,40 @@ h1{
   justify-content: center;
   color: white;
   
+
+}
+
+#header{
+
+
+border-color: unset;
+display: flex;
+flex-direction: row;
+background-color: unset;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+}
+
+#main_title{
+  width: 60vw;
+  
+  }
+
+#logo{
+
+  width: 10vw;
+
+}
+
+nav{
+height: 5vh;
+display: flex;
+justify-content: center;
+/* width: 3vw; */
 
 }
