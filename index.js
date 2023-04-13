@@ -145,7 +145,7 @@ pose_odom =   new ROSLIB.Topic({
 
 cmd_vel =  new ROSLIB.Topic({
     ros: ros,
-    name: "/cmd_vel",
+    name: "/cmd_vel/safe",
     messageType: 'geometry_msgs/Twist'
   });
 

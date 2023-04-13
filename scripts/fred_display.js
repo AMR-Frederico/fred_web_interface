@@ -26,8 +26,9 @@ function display_state(){
                 3:"AT_GOAL",
                 4:"MOVING_TO_GOAL",
                 5:"WITH_GOAL",
-                6:"STOPING",
-                200:"EMERGENCY_BREAK"
+                6:"MISSION_COMPLETED",
+                200:"EMERGENCY_BREAK",
+                300:"MISSION_COMPLETE"
   };
 
   state_mode.subscribe(function(message) {
