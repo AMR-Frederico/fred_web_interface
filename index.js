@@ -45,6 +45,8 @@ $(document).ready(function(){
  
   controler_connected();
 
+  display_temp();
+
 
 });
 
@@ -76,7 +78,7 @@ var next_objective;
 var controler_battery ; 
 var controler_conected; 
 
-
+var temp;
 
 function initializeTopics() {
 
@@ -159,5 +161,11 @@ cmd_vel =  new ROSLIB.Topic({
     ros: ros, 
     name: "/joy/controler/connected",
     messageType:"std_msgs/Bool"
+  });
+
+   temp = new ROSLIB.Topic({
+    ros: ros, 
+    name: "/status/temp",
+    messageType:'std_msgs/Float32'
   });
 }
