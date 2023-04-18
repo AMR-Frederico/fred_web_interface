@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fred MC</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
+
+    <!-- Our CSS -->
+    <link href="pid.css" rel="stylesheet">
+    <link href="indexx.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+    </style>
+  </head>
+  <body>
+
+   
+
+    <div class="container_bg">
+      <nav>
+      <img id = "ros_conected" src="midia/conected_white.png" alt="">
+      <img id = "controler_conected" src="midia/console_white.png" alt="">
+      </nav>
+      <div id = "header" class = "container_area">
+          <div id ="logo">
+            <img href="pid.html"  src="midia/Logo_Cross.png" alt="">
+          </div>
+          <div id="main_title">
+            <img   src="midia/Fred_Mission_Control.png" alt="">
+          </div>
+          <div id ="logo">
+            <img   src="midia/Logo_Cross.png" alt="">
+          </div>
+      </div>
+       
+
+      <!-- --------------- status------------------ -->
+     <div class = "container_area">
+        <div class="title">
+            <h1>Linear</h1>
+        </div>
+        <div class="title_values">
+          <!-- INIT POS --------------------------------- -->
+        
+          <div class="container_sensor">
+
+            <div class="title">
+                <div class="rading_values">
+                  <h1> Linear</h1>
+
+                </div>
+            </div>
+
+            <div class="values" >
+
+              <div class="container_value">
+                  <div class="title">
+                      <h2>—— P ——</h2>
+                  </div>
+                <div class="rading_values">
+                  <div class="formulario">
+                    <input type="text" id="input-valor_lp">
+                    <button id="botao-linear_p">Publicar</button>
+                  </div>
+                </div>  
+              </div>
+              <div class="container_value">
+                <div class="title">
+                      <h2>—— I ——</h2>
+                  </div>
+                <div class="rading_values">
+                    <div class="formulario">
+                    <input type="text" id="input-valor_li">
+                    <button id="botao-linear_i">Publicar</button>
+                    </div>
+                </div>
+              </div>
+              <div class="container_value">
+                <div class="title">
+                      <h2>—— D ——</h2>
+                  </div>
+                    <div class="rading_values">
+                      <div class="formulario">
+                        <input type="text" id="input-valor_ld">
+                        <button id="botao-linear_d">Publicar</button>
+                       </div>
+                  </div>
+              </div>
+
+            </div>
+
+          </div>
+         
+          </div>
+          
+        </div>
+        
+         <div class = "container_area">
+        <div class="title">
+            <h1>Angular</h1>
+        </div>
+        <div class="title_values">
+          <!-- INIT POS --------------------------------- -->
+        
+          <div class="container_sensor">
+
+            <div class="title">
+                <div class="rading_values">
+                  <h1> Angular</h1>
+
+                </div>
+            </div>
+
+            <div class="values" >
+
+              <div class="container_value">
+                  <div class="title">
+                      <h2>—— P ——</h2>
+                  </div>
+                <div class="rading_values">
+                 <div class="formulario">
+                        <input type="text" id="input-valor_ap">
+                        <button id="botao-angular_p">Publicar</button>
+                       </div>
+                </div>
+              </div>
+              <div class="container_value">
+                <div class="title">
+                      <h2>—— I ——</h2>
+                  </div>
+                <div class="rading_values">
+                      <div class="formulario">
+                        <input type="text" id="input-valor_ai">
+                        <button id="botao-angular_i">Publicar</button>
+                       </div>
+                </div>
+              </div>
+              <div class="container_value">
+                <div class="title">
+                      <h2>—— D ——</h2>
+                  </div>
+                  <div class="rading_values">
+                      <div class="formulario">
+                        <input type="text" id="input-valor_ad">
+                        <button id="botao-angular_d">Publicar</button>
+                       </div>
+                  </div>
+              </div>
+
+            </div>
+
+          </div>
+         
+          </div>
+          
+        </div>
+          
+      </div>
+     
+
+
+       <!-- ------------- INIT SENSOR --------------------------------- -->   
+     
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- ROSBridge -->
+    <!-- <script src="https://static.robotwebtools.org/roslibjs/current/roslib.js" referrerpolicy="no-referrer"></script> -->
+    <!-- ROSLib.js -->
+    <script src="roslib.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" crossorigin="anonymous"></script>
+    <!-- Our own JS -->
+    <script src="index.js" crossorigin="anonymous"></script>
+    <script src="./scripts/point_cloud_controller.js" crossorigin="anonymous"></script>
+    <script src="./scripts/sensors_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/status_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/fred_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/tools.js" crossorigin="anonymous"></script>
+    <script src="./scripts/nav_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/input.js"  crossorigin="anonymous"></script>
+  </body>
+</html>
