@@ -58,7 +58,7 @@ botaoPrintar_l_d.addEventListener("click", function() {
   topic.publish(message);
 });
 
-const botaoPrintar_a_p = document.getElementById("botao-angular-p");
+const botaoPrintar_a_p = document.getElementById("botao-angular_p");
 botaoPrintar_a_p.addEventListener("click", function() {
   const inputValor = document.getElementById("input-valor_ap");
   const valor = inputValor.value;
@@ -78,7 +78,7 @@ botaoPrintar_a_p.addEventListener("click", function() {
   topic.publish(message);
 });
 
-const botaoPrintar_a_i = document.getElementById("botao-angular-i");
+const botaoPrintar_a_i = document.getElementById("botao-angular_i");
 botaoPrintar_a_i.addEventListener("click", function() {
   const inputValor = document.getElementById("input-valor_ai");
   const valor = inputValor.value;
@@ -98,7 +98,7 @@ botaoPrintar_a_i.addEventListener("click", function() {
   topic.publish(message);
 });
 
-const botaoPrintar_a_d = document.getElementById("botao-angular-d");
+const botaoPrintar_a_d = document.getElementById("botao-angular_d");
 botaoPrintar_a_d.addEventListener("click", function() {
   const inputValor = document.getElementById("input-valor_ad");
   const valor = inputValor.value;
