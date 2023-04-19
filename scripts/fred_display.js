@@ -50,7 +50,7 @@ function display_controler_bat(){
 function display_temp(){
   temp.subscribe(function(message) {
     console.log(message.data);    
-    $("#temp").text( message.data.toFixed(3) + "C");
+    $("#temp").text( message.data.toFixed(3) + " C");
       
   });
 
