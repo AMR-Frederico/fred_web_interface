@@ -3,24 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ROS - Live Server</title>
+    <title>Fred MC</title>
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"> -->
 
     <!-- Our CSS -->
-    <link href="index.css" rel="stylesheet">
+    <link href="indexx.css" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+    </style>
   </head>
   <body>
 
-    <nav class="navbar bg-dark">
-      <div class="logo-container">
-      </div>
-    </nav>
+   
 
     <div class="container_bg">
-      <div class = "container_area">
-          <h1>Fred Mission Control</h1>
+      <nav>
+      <img id = "ros_conected" src="midia/conected_white.png" alt="">
+      <img id = "controler_conected" src="midia/console_white.png" alt="">
+      <a href = "pid.html" > pid </a>
+      </nav>
+      <div id = "header" class = "container_area">
+          <div id ="logo">
+            <img   src="midia/Logo_Cross.png" alt="">
+          </div>
+          <div id="main_title">
+            <img   src="midia/Fred_Mission_Control.png" alt="">
+          </div>
+          <div id ="logo">
+            <img   src="midia/Logo_Cross.png" alt="">
+          </div>
       </div>
        <div class = "container_area">
         <div class="title">
@@ -31,7 +44,7 @@
         
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>State Machine</h1>
             </div>
 
@@ -39,9 +52,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Goal mode</h2>
+                      <h2>—— Goal mode ——</h2>
                   </div>
-                <h1> Idle</h1>
+                 <div  class="rading_values">
+                    <h1 id="state"> Idle</h1>
+                 </div>
               </div>
               
 
@@ -52,7 +67,7 @@
           <!-- ------------------- INIT Odom --------------------------------- -->
         <div class="container_sensor">
 
-            <div class="title">
+             <div  class="rading_values">
                 <h1>Mode</h1>
             </div>
 
@@ -60,9 +75,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>current</h2>
+                      <h2>—— current ——</h2>
                   </div>
-                <h1> Manual</h1>
+                   <div  class="rading_values">
+                      <h1 id ="mode"> Manual</h1>
+                  </div>
               </div>
               
               
@@ -74,7 +91,7 @@
           <!-- ------------------------ init cmd_vel ------------------- -->
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>Objective</h1>
             </div>
 
@@ -82,21 +99,60 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Current </h2>
+                      <h2>—— Current —— </h2>
                   </div>
-                <h1 id = "current_objective"> 12.5 , 0</h1>
+               <div  class="rading_values">
+                <h1 id = "current_objective"> 0 , 0</h1>
+              </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Next</h2>
+                      <h2>—— Next ——</h2>
                   </div>
-                <h1> 4 , 6</h1>
+                  <div  class="rading_values">
+                      <h1> 0 , 0</h1>
+                  </div>
               </div>
               
 
             </div>
 
           </div>
+           <div class="container_sensor">
+
+            <div  class="rading_values">
+                <h1>Info</h1>
+            </div>
+
+            <div class="values" >
+
+              <div class="container_value">
+                  <div class="title">
+                      <h2>—— Controler ——</h2>
+                  </div>
+                 <div  class="rading_values">
+                    <h1 id = "controler_bat" > 0%</h1>
+                 </div>
+              </div>
+              
+
+              <div class="container_value">
+                  <div class="title">
+                      <h2>—— Temperature ——</h2>
+                  </div>
+                 <div  class="rading_values">
+                    <h1 id = "temp" > 0C</h1>
+                 </div>
+              </div>
+              
+
+            </div>
+
+          </div>
+          
+           
+
+        
           <!-- ---------------------- finished encoder ----------------------  -->
         </div>
           <!-- ----------------------------- finished sensor-----------------------  -->
@@ -112,28 +168,37 @@
           <div class="container_sensor">
 
             <div class="title">
-                <h1>Pose</h1>
+                <div class="rading_values">
+                  <h1> Pose</h1>
+
+                </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>X</h2>
+                      <h2>—— X ——</h2>
                   </div>
-                <h1> 000</h1>
+                <div class="rading_values">
+                  <h1 id="odom_x"> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Y</h2>
+                      <h2>—— Y ——</h2>
                   </div>
-                <h1> 000</h1>
+                <div class="rading_values">
+                      <h1 id="odom_y"> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Theta</h2>
+                      <h2>—— Theta ——</h2>
                   </div>
-                <h1> 000</h1>
+                  <div class="rading_values">
+                       <h1 id="odom_theta"> 000</h1>
+                  </div>
               </div>
 
             </div>
@@ -144,22 +209,31 @@
         <div class="container_sensor">
 
             <div class="title">
-                <h1>Speed Feedback</h1>
+                <div class="rading_values">
+                  <h1>Speed Feedback</h1>
+                </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Angular</h2>
+                      <div class="rading_values">
+                            <h2>—— Angular ——</h2>
+                      </div>
                   </div>
-                <h1> 000</h1>
+                      <div class="rading_values">
+                <h1 id="odom_speed_angular"> 000</h1>
+                      </div>
               </div>
               <div class="container_value">
                   <div class="title">
-                      <h2>Linear</h2>
+                  
+                      <h2>—— Linear ——</h2>
                   </div>
-                <h1> 000</h1>
+                    <div class="rading_values">
+                       <h1 id="odom_speed_linear"> 000</h1>
+                   </div>
               </div>
               
 
@@ -171,22 +245,28 @@
           <div class="container_sensor">
 
             <div class="title">
-                <h1>CMD_VEL</h1>
+                  <div class="rading_values">
+                     <h1>CMD_VEL</h1>
+                  </div>
             </div>
 
             <div class="values" >
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Linear X</h2>
+                      <h2>—— Linear X ——</h2>
                   </div>
-                <h1> 000</h1>
+                    <div class="rading_values">
+                      <h1 id="cmd_linear"> 000</h1>
+                    </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Angular Z</h2>
+                      <h2>—— Angular Z ——</h2>
                   </div>
-                <h1> 000</h1>
+                   <div class="rading_values">
+                       <h1 id="cmd_angular"> 000</h1>
+                   </div>
               </div>
               
 
@@ -210,7 +290,7 @@
         
           <div class="container_sensor">
 
-            <div class="title">
+           <div  class="rading_values">
                 <h1>Distance</h1>
             </div>
 
@@ -218,21 +298,27 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>Left</h2>
+                      <h2>—— Left ——</h2>
+                  </div>  
+                  <div  class="rading_values">
+                      <h1 id = "distance_left"> 000</h1>
                   </div>
-                <h1> 000</h1>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Right</h2>
+                      <h2>—— Right ——</h2>
                   </div>
-                <h1> 000</h1>
+                 <div  class="rading_values">
+                  <h1 id = "distance_right"> 000</h1>
+                </div>
               </div>
               <div class="container_value">
                 <div class="title">
-                      <h2>Back</h2>
+                      <h2>—— Back ——</h2>
                   </div>
-                <h1> 000</h1>
+                 <div  class="rading_values">
+                  <h1 id = "distance_back"> 000</h1>
+                 </div>
               </div>
 
             </div>
@@ -242,7 +328,7 @@
           <!-- ------------------- INIT IMU --------------------------------- -->
         <div class="container_sensor">
 
-            <div class="title">
+             <div  class="rading_values">
                 <h1>IMU</h1>
             </div>
 
@@ -250,9 +336,11 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2>YAW</h2>
+                      <h2>—— Quaternion ——</h2>
                   </div>
-                <h1 id = "imu"> 000</h1>
+                  <div  class="rading_values">
+                      <h1 id = "imu"> 000</h1>
+                  </div>
               </div>
               
 
@@ -263,7 +351,7 @@
           <!-- ------------------------ init encoder ------------------- -->
           <div class="container_sensor">
 
-            <div class="title">
+            <div  class="rading_values">
                 <h1>Encoder</h1>
             </div>
 
@@ -271,15 +359,19 @@
 
               <div class="container_value">
                   <div class="title">
-                      <h2 >Left Ticks</h2>
+                      <h2 >—— Left Ticks ——</h2>
                   </div>
-                <h1 id="left_ticks" > 000</h1>
+                   <div  class="rading_values">
+                      <h1 id="left_ticks" > 000</h1>
+                   </div>
               </div>
                <div class="container_value">
                   <div class="title">
-                      <h2>Right  Ticks</h2>
+                      <h2>—— Right Ticks ——</h2>
                   </div>
-                <h1 id="right_ticks"> 000</h1>
+                   <div  class="rading_values">
+                      <h1 id="right_ticks"> 000</h1>
+                  </div>
               </div>
               
 
@@ -306,5 +398,10 @@
     <script src="index.js" crossorigin="anonymous"></script>
     <script src="./scripts/point_cloud_controller.js" crossorigin="anonymous"></script>
     <script src="./scripts/sensors_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/status_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/fred_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/tools.js" crossorigin="anonymous"></script>
+    <script src="./scripts/nav_display.js" crossorigin="anonymous"></script>
+    <script src="./scripts/input.js"  crossorigin="anonymous"></script>
   </body>
 </html>

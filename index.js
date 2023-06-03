@@ -1,3 +1,6 @@
+var connected_to_ros = false;
+
+
 $(document).ready(function(){
   console.log("Document ready!!!");
 
@@ -7,25 +10,48 @@ $(document).ready(function(){
   });
   
   ros.on('connection', function() {
-    console.log('Connected to ROS Bridge server!');
+    console.log('Connected to ROS Bridge server!!');
+    connected_to_ros = true;
+    ros_connected();
+    
   });
   
   ros.on('error', function(error) {
     console.log('Error connecting to ROS Bridge server:', error);
+    connected_to_ros = false; 
+     ros_connected();
   });
   
   ros.on('close', function() {
     console.log('Disconnected from ROS Bridge server.');
+    connected_to_ros = false; 
+    ros_connected();
   });
 
   initializeTopics();
+
   display_ticks();
+  display_distance();
+  display_imu();
+
+  display_odom();
+  display_cmd_vel();
+
+  display_mode();
+  display_state();
+  display_curent_objective();
+  display_controler_bat();
+
+ 
+  controler_connected();
+
+  display_temp();
+
 
 });
 
 // Variáveis globais
 var ros;
-
 // Sensors 
 var sensor_ticks_left;
 var sensor_ticks_right;
@@ -37,27 +63,22 @@ var distance_right;
 var distance_back;
 
 //Status 
-var pose_x;
-var pose_y;
-var theta;
+var pose_odom;
 
-var feedback_linear
-var feedback_angular 
+var cmd_vel;
 
-var cmd_vel_linear
-var cmd_vel_angular 
 
 //Fred
 
-var goal_mode;
+var state_mode;
 var current_mode;
 var curent_objective;
-var next_objective 
+var next_objective; 
 
+var controler_battery ; 
+var controler_conected; 
 
-
-
-
+var temp;
 
 function initializeTopics() {
 
@@ -75,32 +96,76 @@ function initializeTopics() {
 
   sensor_imu = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/orientation/imu",
+    messageType: 'sensor_msgs/Imu'
   });
+  
 
+ 
  distance_back = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
-  });
- distance_back = new ROSLIB.Topic({
-    ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/back",
+    messageType: 'sensor_msgs/Range'
   });
  distance_left = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/left",
+    messageType: 'sensor_msgs/Range'
   });
  distance_right = new ROSLIB.Topic({
     ros: ros,
-    name: "/sensor/imu",
-    messageType: 'std_msgs/Float64'
+    name: "/sensor/range/ultrasonic/right",
+    messageType: 'sensor_msgs/Range'
   });
 
 
 
 
+curent_objective =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/goal_manager/goal/current",
+    messageType: 'geometry_msgs/PoseStamped'
+  });
+
+state_mode = new ROSLIB.Topic({
+    ros: ros,
+    name: "/cmd/led_strip/color",
+    messageType: 'std_msgs/Float32'
+  });
+
+current_mode =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/machine_state/control_mode/manual",
+    messageType: 'std_msgs/Bool'
+  });
+
+pose_odom =   new ROSLIB.Topic({
+    ros: ros,
+    name: "/odom",
+    messageType: 'nav_msgs/Odometry'
+  });
+
+cmd_vel =  new ROSLIB.Topic({
+    ros: ros,
+    name: "/cmd_vel/safe",
+    messageType: 'geometry_msgs/Twist'
+  });
+
+  controler_battery = new ROSLIB.Topic({
+    ros: ros, 
+    name: "/joy/controler/ps4/battery",
+    messageType:"std_msgs/Int16"
+  });
+
+  controler_conected = new ROSLIB.Topic({
+    ros: ros, 
+    name: "/joy/controler/connected",
+    messageType:"std_msgs/Bool"
+  });
+
+   temp = new ROSLIB.Topic({
+    ros: ros, 
+    name: "/status/temp",
+    messageType:'std_msgs/Float32'
+  });
 }
